@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>探头映射表</h2>
+	<form id="4" th:action="@{/disprobe/query}"
+		th:object="${LabDisprobeNumber}" method="post">
+		<div th:each="labDisprobe:${labDisprobelist}"></div>
+
+		<input type="submit" name="query" value="Query" />
+	</form>
+
+
+	<table border="1" cellpadding="10" align="center">
+		<tr>
+			<th>探头原名</th>
+			<th>商户自定义名</th>
+			<th>创建时间</th>
+			<th>原数据表名</th>
+			<th>显示数据表明</th>
+		</tr>
+		<tr th:each="labDisprobe:${labDisprobelist}">
+			<td th:text="${labDisprobe.inputProbeNumber}"></td>
+			<td th:text="${labDisprobe.displayProbeNumber}"></td>
+			<td th:text="${labDisprobe.create_time}"></td>
+			<td th:text="${labDisprobe.tab_InputName}"></td>
+			<td th:text="${labDisprobe.tab_DisplayName}"></td>
+		</tr>
+	</table>
+
+</body>
+</html>

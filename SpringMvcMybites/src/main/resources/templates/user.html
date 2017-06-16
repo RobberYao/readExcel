@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>User Action</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+	<h1 th:inline="text">Add User</h1>
+	<form id="1" th:action="@{/user/addUser}" th:object="${User}"
+		method="post">
+		name: <input type="text" name="name" /> <br /> age: <input
+			type="int" name="age" /> <br /> <input type="submit" name="add"
+			value="ADD" />
+	</form>
+
+	<h1 th:inline="text">Del User</h1>
+	<form id="2" th:action="@{/user/delUser}" th:object="${User}"
+		method="post">
+		name: <input type="text" name="name" /> <br /> <input type="submit"
+			name="del" value="DEL" />
+	</form>
+
+	<h1 th:inline="text">Update User</h1>
+	<form id="3" th:action="@{/user/updateUser}" th:object="${User}"
+		method="post">
+		name: <input type="text" name="name" /> <br /> age: <input
+			type="int" name="age" /> <br /> <br /> <input type="submit"
+			name="update" value="Update" /> <br />
+	</form>
+
+	<h1 th:inline="text">Query User</h1>
+	<form id="4" th:action="@{/user/queryUser}" th:object="${User}"
+		method="post">
+		name: <input type="text" name="name" /> <br /> <br /> <input
+			type="submit" name="query" value="Query" /> <br />
+		<div th:each="user:${userList}">
+			<p th:text="${user}"></p>
+		</div>
+	</form>
+
+
+	<div th:text="${MSG}">
+		<p>333</p>
+	</div>
+	<br />
+	<br />
+	<input type="button" name="add" value="Back"
+		onclick="window.location.href='/welcome'" />
+</body>
+</html>

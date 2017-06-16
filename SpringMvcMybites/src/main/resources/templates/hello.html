@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Hello World!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1 th:inline="text">Hello.v.2</h1>
+	<!-- <div th:each="user:${users}">
+		<p th:text="${user}">333</p>
+	</div>
+ -->
+
+	<!-- <form action="#" th:action="@{/processForm}" th:object="${foo}" method="post">   -->
+<!--   <input type="text" th:field="*{bar}" />  
+  <input type="submit" />   -->
+  
+  	<input type="button" name="add" value="ToUser"
+		onclick="window.location.href='/user'" />
+  
+  
+</form>  
+</body>
+</html>
